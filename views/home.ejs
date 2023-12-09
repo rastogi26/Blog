@@ -1,0 +1,36 @@
+<%- include("partials/header") -%> 
+<h1>Home</h1>
+<p><%= home_content %> </p>
+
+
+
+        <% messagesPost.forEach(message => {%>
+        <h1><%= message.title %> </h1>
+        <p><%= message.content.substring(0,100)+" ..." %> <a href="/posts/<%= message._id %> ">Read More</a>
+        
+        </p>
+        <form class="" action="/delete" method="post">
+                <button type="submit" name="button" value="<%= message._id%>">delete</button>
+             </form>
+
+        
+         
+    <%   }); %>
+
+    <!-- <% messagesPost.forEach(message => {%>
+        <form class="" action="/delete" method="post">
+                <h1><%= message.title %> </h1>
+                <p><%= message.content.substring(0,100)+" ..." %> <a href="/posts/<%= message._id %> ">Read More</a>
+            
+                </p>
+                <button type="submit" name="button" value="<%= message._id%>">delete</button>
+             </form>
+        
+        
+
+
+ 
+<%   }); %> -->
+
+  
+<%- include("partials/footer") -%>
